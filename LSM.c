@@ -18,7 +18,7 @@
 
 #endif // EXPAND_DEBUG
 
-#define getLevelName(l) {'L',(char)((l%100)+48), (char)((l%10)+48),'\0' }
+#define getLevelName(l) {'L',(char)(((l/10)%10)+48), (char)((l%10)+48),'\0' }
 
 #define mergeLatchC0(tree) at_latchChar(&(tree->c0mergeLatch))
 
@@ -451,7 +451,7 @@ static void printSummaryFromTree(BTree * tree){
     LSMData * data = bt_iterNext(iter);
     while(data != NULL){
         if(data->metadata != DELETE){
-            printf("%i:%i:%s ", data->key, data->value,"L1");
+            printf("%i:%i:%s ", data->key, data->value,"L01");
         }
         data = bt_iterNext(iter);
     }
@@ -525,7 +525,8 @@ void lsm_printSummary(LSMTree * tree){
     level = tree->levelsOnDisk;
     while(level != NULL){
         ArrayOnDisk * diskArray = lvl_getLastDiskArray(level);
-        char label[] = getLevelName(level->levelNumber + 1);
+        unsigned int levelDisplayNumber = level->levelNumber + 1;
+        char label[] = getLevelName(levelDisplayNumber);
         while(diskArray != NULL){
             char filename[] = getFileName(level->levelNumber, diskArray->id);
             FILE * f = fopen(filename, "r");
