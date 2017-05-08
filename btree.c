@@ -4,7 +4,7 @@
 #include "RangeResult.h"
 #include <string.h>
 
-#define LEAF_SIZE 40
+#define LEAF_SIZE 400
 
 #define getArray(tree,i) &(tree->leaves[tree->indexesOfArrays[i]])
 

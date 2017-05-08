@@ -1,25 +1,20 @@
 #pragma once
 
 /*
-    Configuration module containing defaults and functionality
-    for reading user configuration
-
+    Configuration module containing defaults, system configuration
+    and functionality for reading user configuration
 */
 
-//430
 #define PAGE_SIZE 430
-
-//#define TREE_RATIO 8
 
 #define USE_FENCE 1
 
 //#define LSM_DEBUG 1
 
 
-#define EXPAND_DEBUG 1
+//#define EXPAND_DEBUG 1
 
-
-//#define THREADED_MERGES 1
+#define THREADED_MERGES 1
 
 #define THREADED_READS 1
 
