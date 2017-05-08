@@ -188,7 +188,7 @@ bool sa_searchForKeyInFile(FILE * f, int32_t key, int32_t * value, ValueMetadata
             if(holder->key == key ){
                 *value = holder->value;
                 *metadata = holder->metadata;
-                return 1;
+                return true;
             }
             if(holder->key > key){
                 //We have not found the instance
@@ -197,7 +197,7 @@ bool sa_searchForKeyInFile(FILE * f, int32_t key, int32_t * value, ValueMetadata
         }
     }
 
-    return true;
+    return false;
 }
 
 void sa_printArrayFile(FILE * f, const char * label){

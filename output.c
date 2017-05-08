@@ -121,7 +121,7 @@ void out_write(OutputBuffer * buffer,LSMData * dataToWrite, unsigned long writeI
 }
 
 void waitForAllWritesToBeComplete(OutputBuffer * buffer){
-    while(buffer->nextWrite + 1 != buffer->writeID.count){
+    while(buffer->nextWrite != buffer->writeID.count + 1){
         at_sleep();
     }
 }

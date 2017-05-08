@@ -11,10 +11,10 @@ int main(int argc, const char* argv[]){
     }
 
 	LSMTree * tree = lsm_create(config);
-	return prs_parseLSMCommands(tree, stdin);
+	int retVal = prs_parseLSMCommands(tree, stdin);
 	cfg_free(config);
 	lsm_free(tree);
-    return 0;
+    return retVal;
 
 }
 

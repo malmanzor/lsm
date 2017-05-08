@@ -22,8 +22,13 @@ typedef struct {
     LSMLevel * levelsOnDisk;
     ThreadPool * threadPool;
     OutputBuffer * buffer;
+
+    //Ratio between levels
     unsigned int treeRatio;
+
     unsigned int c0size;
+
+    //False positive rate for bloom filters
     float falsePositiveRate;
     unsigned long fileId;
 }LSMTree;

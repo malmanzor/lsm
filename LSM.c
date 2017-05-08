@@ -5,7 +5,6 @@
 #include <limits.h>
 #include "bloom.h"
 #include "btree.h"
-#include "tree.h"
 #include "lsmlevel.h"
 #include "atomics.h"
 #include "fence.h"
