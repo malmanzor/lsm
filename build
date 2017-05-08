@@ -1,0 +1,8 @@
+gcc  -O main.c CommandParser.c LSM.c SortedArray.c value.c bloom.c \
+RangeResult.c btree.c fence.c atomics.c lsmlevel.c threadpool.c \
+output.c config.c -pthread -lm
+
+
+
+
+# -pg
